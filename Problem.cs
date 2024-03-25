@@ -30,17 +30,41 @@ namespace ProblemPlecakowy
             public float coeff;
             public ItemCoeff(int id, float coeff) { this.id = id; this.coeff = coeff; }
         }
-        public void Solve(int cap) {
+        public int[] Solve(int cap) {
             ItemCoeff[] itemsCoeffs = new ItemCoeff[this.N];
             for (int i = 0; i < this.N; ++i) 
             {
                 itemsCoeffs[i].id = this.items[i].Id;
                 itemsCoeffs[i].coeff = (float)this.items[i].Waga / this.items[i].Wartosc;
             }
-            for (int i = 0; i < this.N; ++i)
+   
+            Array.Sort(itemsCoeffs, (x, y) => y.coeff.CompareTo(x.coeff));
+
+            int[] knapsack = new int[this.N];
+            int occupied = 0;
+            int totalWartosc = 0;
+            int counter = 0;
+
+            foreach (var itemCoeff in itemsCoeffs)
             {
-                Console.WriteLine($"{itemsCoeffs[i].id} {itemsCoeffs[i].coeff}");
+                Item item = this.items[itemCoeff.id];
+                if (occupied == cap) { break; }
+                if (occupied + item.Waga > cap) { continue; }
+                occupied += item.Waga;
+                totalWartosc += item.Wartosc;
+                knapsack[counter++] = item.Id;
             }
+
+            Console.Write("Items: ");
+            for (int i = 0; i < counter; ++i)
+            {
+                Console.Write(knapsack[i] + " ");
+            }
+            Console.WriteLine();
+            Console.WriteLine($"Total weight: {occupied}");
+            Console.WriteLine($"Total value: {totalWartosc}");
+
+            return knapsack;
         }
 
             
