@@ -1,17 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
+[assembly: InternalsVisibleTo("Knapsack_test")]
 namespace ProblemPlecakowy
 {
     internal class Problem {
         private int N;
+        
         private Item[] items;
         
+        public Item[] Items
+        {
+            get { return items; }
+            set {
+                Array.Copy(items, value, value.Length);
+
+                for (int i = 0; i < value.Length; i++)
+                {
+                    items[i] = value[i];
+                }
+            }
+        }
+
+
         public Problem(int n, int seed) {
             this.N = n;
             this.items = new Item[this.N];
