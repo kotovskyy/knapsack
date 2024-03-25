@@ -15,7 +15,8 @@
             Console.WriteLine("Enter the capacity: ");
             int cap = int.Parse(Console.ReadLine());
 
-            problem.Solve(cap);
+            int[] order = problem.Solve(cap);
+
             //Result result = new Result([1, 2, 3, 4], 20, 14);
             //Console.WriteLine(result.ToString());
             //Console.WriteLine(problem.Solve(cap).ToString());
