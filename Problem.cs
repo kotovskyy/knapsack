@@ -19,12 +19,11 @@ namespace ProblemPlecakowy
         {
             get { return items; }
             set {
-                //Array.Copy(items, value, value.Length);
-                this.N = value.Length;
-                this.items = new Item[this.N];
-                for (int i = 0; i < this.N; i++)
+                Array.Copy(items, value, value.Length);
+
+                for (int i = 0; i < value.Length; i++)
                 {
-                    this.items[i] = value[i];
+                    items[i] = value[i];
                 }
             }
         }
