@@ -31,12 +31,16 @@ namespace ProblemPlecakowy
             public ItemCoeff(int id, float coeff) { this.id = id; this.coeff = coeff; }
         }
         public void Solve(int cap) {
-            List<ItemCoeff> coeffs = [];
-            foreach(var item in this.items)
+            ItemCoeff[] itemsCoeffs = new ItemCoeff[this.N];
+            for (int i = 0; i < this.N; ++i) 
             {
-               coeffs.Add(new ItemCoeff(item.Id, item.Wartosc/item.Waga));
+                itemsCoeffs[i].id = this.items[i].Id;
+                itemsCoeffs[i].coeff = (float)this.items[i].Waga / this.items[i].Wartosc;
             }
-            coeffs.Sort();
+            for (int i = 0; i < this.N; ++i)
+            {
+                Console.WriteLine($"{itemsCoeffs[i].id} {itemsCoeffs[i].coeff}");
+            }
         }
 
             
