@@ -30,7 +30,7 @@ namespace ProblemPlecakowy
             public float coeff;
             public ItemCoeff(int id, float coeff) { this.id = id; this.coeff = coeff; }
         }
-        public int[] Solve(int cap) {
+        public Result Solve(int cap) {
             ItemCoeff[] itemsCoeffs = new ItemCoeff[this.N];
             for (int i = 0; i < this.N; ++i) 
             {
@@ -40,7 +40,7 @@ namespace ProblemPlecakowy
    
             Array.Sort(itemsCoeffs, (x, y) => y.coeff.CompareTo(x.coeff));
 
-            int[] knapsack = new int[this.N];
+            List<int> knapsack = new List<int>();
             int occupied = 0;
             int totalWartosc = 0;
             int counter = 0;
@@ -52,19 +52,12 @@ namespace ProblemPlecakowy
                 if (occupied + item.Waga > cap) { continue; }
                 occupied += item.Waga;
                 totalWartosc += item.Wartosc;
-                knapsack[counter++] = item.Id;
+                knapsack.Add(item.Id);
             }
 
-            Console.Write("Items: ");
-            for (int i = 0; i < counter; ++i)
-            {
-                Console.Write(knapsack[i] + " ");
-            }
-            Console.WriteLine();
-            Console.WriteLine($"Total weight: {occupied}");
-            Console.WriteLine($"Total value: {totalWartosc}");
+            Result result = new Result(knapsack, occupied, totalWartosc);
 
-            return knapsack;
+            return result;
         }
 
             
