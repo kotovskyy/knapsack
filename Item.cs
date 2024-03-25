@@ -9,9 +9,20 @@ namespace ProblemPlecakowy
     internal class Item
     {
         private int id, waga, wartosc;
-        public int Id { get; set; }
-        public int Waga {  get; set; }
-        public int Wartosc { get; set; }
+        public int Id {
+            get { return id; } 
+            set { id = value; }
+        }
+        public int Waga
+        {
+            get { return waga; }
+            set { waga = value; }
+        }
+        public int Wartosc
+        {
+            get { return wartosc; }
+            set { wartosc = value; }
+        }
 
         public Item(int id, int waga, int wartosc)
         {
