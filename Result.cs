@@ -9,6 +9,9 @@ namespace ProblemPlecakowy
     internal class Result
     {
         private List<int> itemsID;
+        public List<int> ItemsID
+        {  get { return itemsID; } }
+
         private int totalW;
         private int totalV;
         public int TotalW { get; set; }
