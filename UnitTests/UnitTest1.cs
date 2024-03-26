@@ -147,6 +147,24 @@ namespace Knapsack_test
             Assert.AreEqual(N, items_num);
 
         }
+
+        [TestMethod]
+        public void TestZeroItemsPassed()
+        {
+            const int N = 0;
+            int cap = 15;
+
+            Problem problem = new Problem(N, 1);
+
+            var result = problem.Solve(cap);
+
+            int expectedW = 0;
+            int expectedV = 0;
+            int expectedLen = 0;
+            Assert.AreEqual(expectedLen, result.ItemsID.Count);
+            Assert.AreEqual(expectedW, result.TotalW);
+            Assert.AreEqual(expectedV, result.TotalV);
+        }
     }
 
 }
