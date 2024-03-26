@@ -46,6 +46,12 @@ namespace ProblemPlecakowy
             public float coeff;
             public ItemCoeff(int id, float coeff) { this.id = id; this.coeff = coeff; }
         }
+
+        public Item FindItemById(int id)
+        {
+            return items.FirstOrDefault(item => item.Id == id);
+        }
+
         public Result Solve(int cap) {
             ItemCoeff[] itemsCoeffs = new ItemCoeff[this.N];
             for (int i = 0; i < this.N; ++i) 
@@ -59,7 +65,6 @@ namespace ProblemPlecakowy
             List<int> knapsack = new List<int>();
             int occupied = 0;
             int totalWartosc = 0;
-            int counter = 0;
 
             for (int i = 0; i < this.N; i++)
             {
@@ -68,7 +73,7 @@ namespace ProblemPlecakowy
 
             foreach (var itemCoeff in itemsCoeffs)
             {
-                Item item = this.items[itemCoeff.id];
+                Item item = FindItemById(itemCoeff.id);
                 if (occupied == cap) { break; }
                 if (occupied + item.Waga > cap) { continue; }
                 occupied += item.Waga;
