@@ -29,7 +29,7 @@ namespace ProblemPlecakowy
         }
 
         public Problem(int n, int seed) {
-            this.N = n;
+            this.N = Math.Max(0, n);
             this.items = new Item[this.N];
             Random random = new Random(seed);
 
@@ -46,12 +46,18 @@ namespace ProblemPlecakowy
             public float coeff;
             public ItemCoeff(int id, float coeff) { this.id = id; this.coeff = coeff; }
         }
+
+        public Item FindItemById(int id)
+        {
+            return items.FirstOrDefault(item => item.Id == id);
+        }
+
         public Result Solve(int cap) {
             ItemCoeff[] itemsCoeffs = new ItemCoeff[this.N];
             for (int i = 0; i < this.N; ++i) 
             {
                 itemsCoeffs[i].id = this.items[i].Id;
-                itemsCoeffs[i].coeff = (float)this.items[i].Waga / this.items[i].Wartosc;
+                itemsCoeffs[i].coeff = (float)this.items[i].Wartosc / this.items[i].Waga;
             }
    
             Array.Sort(itemsCoeffs, (x, y) => y.coeff.CompareTo(x.coeff));
@@ -59,11 +65,10 @@ namespace ProblemPlecakowy
             List<int> knapsack = new List<int>();
             int occupied = 0;
             int totalWartosc = 0;
-            int counter = 0;
 
             foreach (var itemCoeff in itemsCoeffs)
             {
-                Item item = this.items[itemCoeff.id];
+                Item item = FindItemById(itemCoeff.id);
                 if (occupied == cap) { break; }
                 if (occupied + item.Waga > cap) { continue; }
                 occupied += item.Waga;

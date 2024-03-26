@@ -19,7 +19,6 @@ namespace ProblemPlecakowy
 
             Result result = problem.Solve(cap);
             Console.WriteLine(result.ToString());
-            //Console.WriteLine(problem.Solve(cap).ToString());
         }
     }
 }
