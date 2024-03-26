@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ProblemPlecakowy;
 
-[assembly: InternalsVisibleTo("UnitTests")]
+[assembly: InternalsVisibleTo("UnitTests"), InternalsVisibleTo("Knapsack_GUI")]
 namespace ProblemPlecakowy
 {
     internal class Problem {
@@ -29,7 +29,7 @@ namespace ProblemPlecakowy
         }
 
         public Problem(int n, int seed) {
-            this.N = n;
+            this.N = Math.Max(0, n);
             this.items = new Item[this.N];
             Random random = new Random(seed);
 
