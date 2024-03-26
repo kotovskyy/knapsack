@@ -51,7 +51,7 @@ namespace ProblemPlecakowy
             for (int i = 0; i < this.N; ++i) 
             {
                 itemsCoeffs[i].id = this.items[i].Id;
-                itemsCoeffs[i].coeff = (float)this.items[i].Waga / this.items[i].Wartosc;
+                itemsCoeffs[i].coeff = (float)this.items[i].Wartosc / this.items[i].Waga;
             }
    
             Array.Sort(itemsCoeffs, (x, y) => y.coeff.CompareTo(x.coeff));
