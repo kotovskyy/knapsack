@@ -9,7 +9,7 @@ namespace Knapsack_GUI
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void calculateButtonClick(object sender, EventArgs e)
         {
             int itemsNum = Int32.Parse(itemsNumTextBox.Text);
             int seed = Int32.Parse(seedTextBox.Text);
@@ -21,8 +21,39 @@ namespace Knapsack_GUI
             string problem_string = problem.ToString();
             string result_string = result.ToString();
 
+            programTextBox.Text = problem_string;
+            resultTextBox.Text = result_string;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+        private static void errorWarning(object sender)
+        {
+            TextBox textBox = (TextBox)sender;
+            int data;
+            textBox.BackColor = Color.White;
+            if (!int.TryParse(textBox.Text, out data) || data <= 0)
+            {
+                textBox.BackColor = Color.Red;
+            }
+        }
+
+        private void capacityTextBox_TextChanged(object sender, EventArgs e)
+        {
+            errorWarning(sender);
+        }
 
 
+        private void seedTextBox_TextChanged(object sender, EventArgs e)
+        {
+            errorWarning(sender);
+        }
+
+        private void itemsNumTextBox_TextChanged(object sender, EventArgs e)
+        {
+            errorWarning(sender);
         }
     }
 }
