@@ -29,7 +29,7 @@ namespace ProblemPlecakowy
         }
 
         public Problem(int n, int seed) {
-            this.N = n;
+            this.N = Math.Max(0, n);
             this.items = new Item[this.N];
             Random random = new Random(seed);
 
