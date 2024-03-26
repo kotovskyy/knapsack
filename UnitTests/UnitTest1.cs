@@ -82,11 +82,6 @@ namespace Knapsack_test
             Result result1 = problem1.Solve(cap);
             Result result2 = problem2.Solve(cap);
 
-            //for (int i = 0; i < N; i++)
-            //{
-            //    Console.WriteLine($"{i} Result 1 :{problem1.Items[i]}");
-            //    Console.WriteLine($"{i} Result 2 :{problem2.Items[i]}");
-            //}
             CollectionAssert.AreEqual(result1.ItemsID, result2.ItemsID);
 
         }
