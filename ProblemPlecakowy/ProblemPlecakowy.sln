@@ -5,7 +5,9 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProblemPlecakowy", "ProblemPlecakowy.csproj", "{30B96103-0366-41A7-86E5-DA68F55F26DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "..\UnitTests\UnitTests.csproj", "{5782D0CD-04AD-493C-B589-ED5618C7815B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "..\UnitTests\UnitTests.csproj", "{5782D0CD-04AD-493C-B589-ED5618C7815B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knapsack_GUI", "..\Knapsack_GUI\Knapsack_GUI.csproj", "{6C30D86F-2787-4BEB-A543-9A90B8D58AC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{5782D0CD-04AD-493C-B589-ED5618C7815B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5782D0CD-04AD-493C-B589-ED5618C7815B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5782D0CD-04AD-493C-B589-ED5618C7815B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C30D86F-2787-4BEB-A543-9A90B8D58AC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C30D86F-2787-4BEB-A543-9A90B8D58AC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C30D86F-2787-4BEB-A543-9A90B8D58AC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C30D86F-2787-4BEB-A543-9A90B8D58AC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

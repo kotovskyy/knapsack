@@ -28,12 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            itemsNumTextBox = new TextBox();
+            seedTextBox = new TextBox();
+            capacityTextBox = new TextBox();
+            calculateButton = new Button();
+            itemsNumLabel = new Label();
+            SuspendLayout();
+            // 
+            // textBox1
+            // 
+            itemsNumTextBox.AccessibleDescription = "Number of Items";
+            itemsNumTextBox.AccessibleName = "ItemsNumberBox";
+            itemsNumTextBox.Location = new Point(44, 48);
+            itemsNumTextBox.Name = "textBox1";
+            itemsNumTextBox.Size = new Size(125, 27);
+            itemsNumTextBox.TabIndex = 0;
+            // 
+            // textBox2
+            // 
+            seedTextBox.Location = new Point(44, 130);
+            seedTextBox.Name = "textBox2";
+            seedTextBox.Size = new Size(125, 27);
+            seedTextBox.TabIndex = 1;
+            // 
+            // textBox3
+            // 
+            capacityTextBox.Location = new Point(44, 211);
+            capacityTextBox.Name = "textBox3";
+            capacityTextBox.Size = new Size(125, 27);
+            capacityTextBox.TabIndex = 2;
+            // 
+            // button1
+            // 
+            calculateButton.Location = new Point(44, 405);
+            calculateButton.Name = "CalculateButton";
+            calculateButton.Size = new Size(125, 36);
+            calculateButton.TabIndex = 3;
+            calculateButton.Text = "Calculate";
+            calculateButton.UseVisualStyleBackColor = true;
+            calculateButton.Click += button1_Click;
+            // 
+            // label1
+            // 
+            itemsNumLabel.AutoSize = true;
+            itemsNumLabel.Location = new Point(44, 25);
+            itemsNumLabel.Name = "NumOfItemsLabel";
+            itemsNumLabel.Size = new Size(50, 20);
+            itemsNumLabel.TabIndex = 4;
+            itemsNumLabel.Text = "Number of Items";
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 503);
+            Controls.Add(itemsNumLabel);
+            Controls.Add(calculateButton);
+            Controls.Add(capacityTextBox);
+            Controls.Add(seedTextBox);
+            Controls.Add(itemsNumTextBox);
+            Name = "Form1";
+            Text = "Form1";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private TextBox itemsNumTextBox;
+        private TextBox seedTextBox;
+        private TextBox capacityTextBox;
+        private Button calculateButton;
+        private Label itemsNumLabel;
     }
 }
