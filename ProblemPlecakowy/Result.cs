@@ -14,7 +14,7 @@ namespace ProblemPlecakowy
 
         public List<int> ItemsID
         {
-            get { return itemsID; }
+            get { return itemsID; } 
         }
 
         private int totalW;

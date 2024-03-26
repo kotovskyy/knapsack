@@ -59,7 +59,6 @@ namespace ProblemPlecakowy
             List<int> knapsack = new List<int>();
             int occupied = 0;
             int totalWartosc = 0;
-            int counter = 0;
 
             foreach (var itemCoeff in itemsCoeffs)
             {
