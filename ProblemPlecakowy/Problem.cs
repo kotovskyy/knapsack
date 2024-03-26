@@ -66,11 +66,6 @@ namespace ProblemPlecakowy
             int occupied = 0;
             int totalWartosc = 0;
 
-            for (int i = 0; i < this.N; i++)
-            {
-                Console.WriteLine($"id: {itemsCoeffs[i].id}, {itemsCoeffs[i].coeff}");
-            }
-
             foreach (var itemCoeff in itemsCoeffs)
             {
                 Item item = FindItemById(itemCoeff.id);
@@ -79,8 +74,6 @@ namespace ProblemPlecakowy
                 occupied += item.Waga;
                 totalWartosc += item.Wartosc;
                 knapsack.Add(item.Id);
-
-                Console.WriteLine($"{ itemCoeff.id} , {occupied}, {totalWartosc}, {itemCoeff.coeff}");
             }
 
             Result result = new Result(knapsack, occupied, totalWartosc);

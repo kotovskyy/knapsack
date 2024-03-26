@@ -110,6 +110,32 @@ namespace Knapsack_test
             Assert.IsTrue(actual.Count >= 1);
         }
 
+
+        [TestMethod]
+        public void TestUniqueResults()
+        {
+            const int N = 5;
+            int cap = 15;
+
+            Item[] arr = new Item[N] {
+                new Item(0, 4, 9),
+                new Item(1, 3, 5),
+                new Item(2, 4, 12),
+                new Item(3, 8, 16),
+                new Item(4, 6, 15)
+            };
+
+            Problem problem = new Problem(N, 1);
+
+            problem.Items = arr;
+
+            var result = problem.Solve(cap);
+            int expected = result.ItemsID.Count;
+            int actual = result.ItemsID.Distinct().Count();
+
+            Assert.AreEqual(expected, actual);
+        }
+
         [TestMethod]
         public void TestNumberOfItems()
         {
