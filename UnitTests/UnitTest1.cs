@@ -165,6 +165,19 @@ namespace Knapsack_test
             Assert.AreEqual(expectedW, result.TotalW);
             Assert.AreEqual(expectedV, result.TotalV);
         }
+
+        [TestMethod]
+        public void TestNegativeItemsNumber()
+        {
+            const int N = -7;
+            int cap = 20;
+            Problem problem = new Problem(N, 42);
+
+            var result = problem.Solve(cap);
+
+            Assert.AreEqual(0, result.TotalV);
+            Assert.AreEqual(0, result.TotalW);
+        }
     }
 
 }
