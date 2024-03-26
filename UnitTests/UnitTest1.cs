@@ -109,6 +109,18 @@ namespace Knapsack_test
 
             Assert.IsTrue(actual.Count >= 1);
         }
+
+        [TestMethod]
+        public void TestNumberOfItems()
+        {
+            const int N = 7;
+
+            Problem problem = new Problem(N, 42);
+            int items_num = problem.Items.Length;
+
+            Assert.AreEqual(N, items_num);
+
+        }
     }
 
 }
