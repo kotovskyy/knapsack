@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ProblemPlecakowy;
 
-[assembly: InternalsVisibleTo("UnitTests")]
+[assembly: InternalsVisibleTo("UnitTests"), InternalsVisibleTo("Knapsack_GUI")]
 namespace ProblemPlecakowy
 {
     internal class Problem {
